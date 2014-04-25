@@ -4,7 +4,7 @@
 
 Name:           python-%{pypi_name}
 Version:        0.22.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A built-package format for Python
 
 License:        MIT
@@ -138,6 +138,9 @@ popd
 
 
 %changelog
+* Fri Apr 25 2014 Matej Stuchlik <mstuchli@redhat.com> - 0.22.0-3
+- Another rebuild with python 3.4
+
 * Fri Apr 18 2014 Matej Stuchlik <mstuchli@redhat.com> - 0.22.0-2
 - Rebuild with python 3.4
 
