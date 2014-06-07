@@ -26,9 +26,6 @@ This is package contains Python 3 version of the package.
 %prep
 %setup -q -n python3-nightly-%{pypi_name}
 
-# copy test files in place
-cp %{SOURCE1} %{pypi_name}/test/
-cp %{SOURCE2} %{pypi_name}/test/
 # header files just has to be there, even empty
 touch %{pypi_name}/test/headers.dist/header.h
 
