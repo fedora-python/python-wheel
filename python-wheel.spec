@@ -2,25 +2,15 @@
 %global pypi_name wheel
 
 Name:           python35-%{pypi_name}
-Version:        0.22.0
-Release:        3%{?dist}
+Version:        0.24.0
+Release:        0.2.20140607hg79e669d9f170%{?dist}
 Summary:        A built-package format for Python
 
 License:        MIT
 URL:            http://bitbucket.org/dholth/wheel/
-Source0:        https://pypi.python.org/packages/source/w/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
-# Some test files are not present in tarball, so we include them separately.
-# Upstream pull request to include the files in tarball:
-# https://bitbucket.org/dholth/wheel/pull-request/34 (Patch0 below)
-# (version 0.22 doesn't have a tag, so we're using commit hash to point to the
-#  correct testing wheel)
-Source1:        https://bitbucket.org/dholth/wheel/src/099352e/wheel/test/test-1.0-py2.py3-none-win32.whl
-Source2:        https://bitbucket.org/dholth/wheel/raw/099352e/wheel/test/pydist-schema.json
-Patch0:         wheel-0.22-add-test-files-to-manifest.path
-Patch1:         wheel-0.22-legacy-keyring-compatibility.patch
-Patch2:         wheel-0.22-fix-tests-broken-by-keyring-fix.patch
+Source0:        python3-nightly-wheel-79e669d9f170.tar
 BuildArch:      noarch
- 
+
 BuildRequires:  python35-devel
 BuildRequires:  python35-setuptools
 
@@ -34,11 +24,7 @@ compatible install in a way that is very close to the on-disk format.
 This is package contains Python 3 version of the package.
 
 %prep
-%setup -q -n %{pypi_name}-%{version}
-
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%setup -q -n python3-nightly-%{pypi_name}
 
 # copy test files in place
 cp %{SOURCE1} %{pypi_name}/test/
@@ -72,6 +58,12 @@ popd
 
 
 %changelog
+* Sat Jun 07 2014 Miro Hrončok <mhroncok@redhat.com> - 0.24.0-0.2.20140607hg79e669d9f170
+- Remove already merged patches
+
+* Sat Jun 07 2014 Miro Hrončok <mhroncok@redhat.com> - 0.24.0-0.1.20140607hg79e669d9f170
+- Update to hg: 79e669d9f170
+
 * Fri Apr 25 2014 Matej Stuchlik <mstuchli@redhat.com> - 0.22.0-3
 - Another rebuild with python 3.4
 
