@@ -9,12 +9,12 @@
 
 Name:           %{?scl_prefix}python-%{pypi_name}
 Version:        0.24.0
-Release:        0.5.20141113hgbdf053a70200%{?dist}
+Release:        0.6.20150513hgf746a01eab7a%{?dist}
 Summary:        A built-package format for Python
 
 License:        MIT
 URL:            http://bitbucket.org/dholth/wheel/
-Source0:        python3-nightly-wheel-bdf053a70200.tar
+Source0:        python3-nightly-wheel-f746a01eab7a.tar
 
 BuildArch:      noarch
 
@@ -143,6 +143,9 @@ popd
 
 
 %changelog
+* Wed May 13 2015 Miro Hrončok <mhroncok@redhat.com> - 0.24.0-0.6.20150513hgf746a01eab7a
+- Update to hg: f746a01eab7a
+
 * Thu Nov 13 2014 Miro Hrončok <mhroncok@redhat.com> - 0.24.0-0.5.20141113hgbdf053a70200
 - Update to hg: bdf053a70200
 
